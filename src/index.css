@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+
+@media print {
+	@page {
+	  size: A4 landscape; /* 📄 Hoja horizontal */
+	  margin: 10mm; /* Márgenes reducidos */
+	}
+  
+	.print-container {
+	  width: 100%;
+	}
+  
+	.print-page {
+	  display: grid;
+	  grid-template-columns: repeat(4, 1fr); /* 2 columnas */
+	  grid-template-rows: repeat(2, auto); /* 4 filas */
+	  gap: 3px;
+	  page-break-after: always; /* 🎯 Salto de página cada 8 jornadas */
+	}
+  
+	.fixture-card {
+	  border: 1px solid black;
+	  padding: 3px;
+	  text-align: center;
+	  page-break-inside: avoid; /* ❌ Evita cortes en medio de una jornada */
+	}
+  }
+  
